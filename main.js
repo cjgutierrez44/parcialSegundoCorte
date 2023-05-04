@@ -112,6 +112,7 @@ function calificar(e){
             }
         }
         espacioNota.classList.remove("d-none")
+        btnMostrarRespuestas.classList.remove("d-none")
         espacioNota.innerHTML = `<h2>Calificación: <span class="text-secondary fw-bold">${calificacion}</span><h2>`
     });
 }else{
@@ -132,6 +133,7 @@ function reiniciar(e){
     calificado = false;
     btnCalificar.disabled = false;
     answersCard.parentElement.classList.add("d-none");
+    btnMostrarRespuestas.classList.add("d-none")
 }
 
 
