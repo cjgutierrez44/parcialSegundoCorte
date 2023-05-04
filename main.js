@@ -66,7 +66,7 @@ function marcar(e,pregunta){
         const li = document.getElementById(""+e.srcElement.id+"");
         const options = document.getElementsByClassName(li.classList[0]);
         for (let option of options) {
-            option.classList.remove("selected", "border", "p-1", "border-1", "border-primary", "bg-dark", "text-light");
+            option.classList.remove("selected", "border", "p-1", "border-1", "border-primary", "bg-dark", "text-light", "border-danger", "border-success");
         //option.classList.remove("selected");
         }
         li.classList.add("selected", "border", "p-1", "border-1", "border-primary", "bg-dark", "text-light");
@@ -107,6 +107,12 @@ function calificar(e){
                 if(op.classList.contains("selected") ){
                     if(op.id == "Pregunta" + i + "Opcion" + respuestas["question"+i] ){
                         calificacion++;
+                        op.classList.remove("border-primary");
+                        op.classList.add("border-success");
+                    }else{
+                        op.classList.remove("border-primary");
+                        op.classList.add("border-danger");
+                        op.classList.add("border-success");
                     }
                 }
             }
@@ -127,7 +133,7 @@ function calificar(e){
 function reiniciar(e){
     const marcadas = document.getElementsByTagName("li")
     for (let option of marcadas) {
-        option.classList.remove("selected", "border", "p-1", "border-1", "border-primary", "bg-dark", "text-light");
+        option.classList.remove("selected", "border", "p-1", "border-1", "border-primary", "bg-dark", "text-light", "border-danger", "border-success");
     }
     espacioNota.classList.add("d-none");
     calificado = false;
