@@ -91,16 +91,13 @@ function calificar(e){
       text: textAlert,
       icon: 'warning',
       showCancelButton: true,
-      showConfirmlButton: mostrar,
+      showConfirmButton: mostrar,
       confirmButtonColor: 'rgba(60, 242, 129, 0.9)',
-      cancelButtonColor: 'rgba(228, 76, 85, 0.9)',
-      confirmButtonText: 'Si',
-      cancelButtonText: 'No'
+      cancelButtonColor: '#1ba2f6',
+      confirmButtonText: 'Enviar',
+      cancelButtonText: 'Continuar'
   }).then((result) => {
     if (result.isConfirmed) {
-        if(marcadas.length < numQuestions){
-            return null;
-        }
       calificado = true;
       btnCalificar.disabled = true;
       let calificacion = 0;
