@@ -98,6 +98,9 @@ function calificar(e){
       cancelButtonText: 'No'
   }).then((result) => {
     if (result.isConfirmed) {
+        if(marcadas.length < numQuestions){
+            return null;
+        }
       calificado = true;
       btnCalificar.disabled = true;
       let calificacion = 0;
