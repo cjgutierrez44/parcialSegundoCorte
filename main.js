@@ -81,7 +81,7 @@ function calificar(e){
     let mostrar = false;
     if (marcadas.length < numQuestions) {
         textAlert = "Aun no ha terminado de contestar todas las preguntas";
-        mostrar = fasle;
+        mostrar = false;
     }else{
         textAlert = "Despues de esto no podrá modificar sus respuestas";
         mostrar = true;
