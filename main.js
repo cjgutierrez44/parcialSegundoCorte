@@ -78,16 +78,20 @@ var respuestas = [];
 function calificar(e){
     const marcadas = document.getElementsByClassName("selected");
     let textAlert = "";
+    let mostrar = false;
     if (marcadas.length < numQuestions) {
         textAlert = "Aun no ha terminado de contestar todas las preguntas";
+        mostrar = fasle;
     }else{
         textAlert = "Despues de esto no podrá modificar sus respuestas";
+        mostrar = true;
     }
     Swal.fire({
       title: 'Está seguro de enviar para calificar?',
       text: textAlert,
       icon: 'warning',
       showCancelButton: true,
+      showConfirmlButton: mostrar,
       confirmButtonColor: 'rgba(60, 242, 129, 0.9)',
       cancelButtonColor: 'rgba(228, 76, 85, 0.9)',
       confirmButtonText: 'Si',
